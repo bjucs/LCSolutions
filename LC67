@@ -1,0 +1,20 @@
+
+#LC67: Add Binary
+
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        aCount = len(a) - 1 
+        bCount = len(b) - 1 
+        aSum = 0
+        bSum = 0
+        # Convert a to int 
+        for x in a:
+            aSum += (int(x) * (2**aCount))
+            aCount -= 1 
+        # Convert b to int 
+        for y in b:
+            bSum += (int(y) * (2**bCount))
+            bCount -= 1
+        # Format binary to string 
+        temp = "{0:b}".format(aSum+bSum)
+        return temp  
