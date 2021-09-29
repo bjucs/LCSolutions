@@ -1,0 +1,16 @@
+
+#LC125: Valid Palindrome
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        dStr = ""
+        
+        for x in s:
+            if x.isalnum() == True:
+                dStr += x 
+        
+        if dStr.lower() == dStr.lower()[::-1]:
+            return True
+        else:
+            return False 
+        
