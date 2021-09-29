@@ -1,0 +1,17 @@
+
+#LC1: Two Sum
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        seenValues = {}
+        
+        # For each index and value in the erray 
+        for index, value in enumerate(nums):
+            # Logs every key value pair in seenValues, so if a pair is found 
+            # that matches the target, returns the indices of the first found 
+            # and the current one that matches 
+            if target - value in seenValues:
+                return seenValues[target-value], index
+            else:
+                seenValues[value] = index
+        return -1
