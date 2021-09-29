@@ -1,0 +1,12 @@
+
+#LC136: Single Number
+
+from collections import Counter 
+
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        c = Counter(nums)
+        for x in nums:
+            if c[x] == 1:
+                return x 
+         
