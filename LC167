@@ -1,0 +1,21 @@
+
+LC167: Two Sum II
+
+class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+        # Python dictionary of seen values
+        seenValues = {}
+        
+        # Loop through nums array using enumerate to get indices 
+        for index, value in enumerate(numbers):
+            # If the target - current value has been looped through,
+            # then you have found your pair
+            if target - value in seenValues:
+                # Add 1 because they want you return as if 1-indexed 
+                return seenValues[target-value]+1, index+1
+            else:
+                seenValues[value] = index
+        
+        return -1
+                
+        
