@@ -1,0 +1,18 @@
+
+#LC26: Remove Duplicates from Sorted Array
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        # Output: number of unique integers 
+        # Method: Remove each duplicated number from the list, then get length again, and return that 
+        
+        counter = 0 
+        
+        while (counter < len(nums)-1):
+            if (nums[counter] == nums[counter+1]):
+                nums.pop(counter)
+            else:
+                counter += 1 
+                
+                
+        return len(nums)
