@@ -1,0 +1,22 @@
+
+#LC66: Plus One 
+
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        repNum = 0 
+        power = 0
+        retList = []
+    
+        if (len(digits) == 0):
+            return [1]
+    
+        else:
+            for x in digits: 
+                repNum += x * 10 ** (len(digits)-1-power)
+                power += 1 
+            repNum += 1 
+            returnStr = str(repNum)
+            for y in returnStr:
+                retList.append(int(y))
+            return retList 
+    
