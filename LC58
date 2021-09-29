@@ -1,0 +1,10 @@
+
+#LC58: Length of Last Word
+
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+            wordList = s.split()
+            if len(wordList) == 0:
+                return 0
+            else:
+                return len(wordList[-1])
