@@ -1,0 +1,21 @@
+
+#LC7: Reverse Integer
+
+class Solution:
+    def reverse(self, x: int) -> int:
+        strInt = str(x)[::-1] # Converts Int to String, and reverses order
+        endIndex = len(strInt) # Gets length of string 
+        
+        if (strInt[endIndex-1] == "-"): # Checks if the number was negative
+                revNeg = int(strInt[0:len(strInt)-1]) * -1
+                if (revNeg >= -2**31):  
+                    return revNeg
+                else:
+                    return 0
+        
+        else:
+            if (int(strInt) <= 2**31-1):
+                return int(strInt)
+            else:
+                return 0
+            
