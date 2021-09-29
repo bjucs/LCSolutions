@@ -1,0 +1,26 @@
+
+#LC14: Longest Common Prefix 
+
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        smallestWord = min(strs, key=len) 
+        cp = ""
+        compLtr = ""
+        currCar = ""
+        flag = True 
+        for x in range(len(smallestWord)):
+            compLtr = smallestWord[x]
+            for z in range(len(strs)):
+                currCar = strs[z]
+                if (strs[z][x] != compLtr):
+                    flag = False 
+            if (flag == True):
+                cp += compLtr 
+        
+        return cp
+                    
+                
+            
+            
+# Iterate through item[x] starting from 0 
+# Iterate through every element in the list -> see if each are equal to each other 
