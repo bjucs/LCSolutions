@@ -1,0 +1,28 @@
+
+# LC 21: Merge Two Sorted Lists
+# Key: LinkedLists, Loops, If/Else Conditionals 
+
+class Solution:
+    def mergeTwoLists(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:  
+        # Initialize head and dummy head 
+        dummy = ListNode() 
+        head = dummy 
+        
+        # While both are still in iteration, compare each and set the dummy head to the lesser 
+        # Iterate to the next of the LinkedList element that is appended 
+        while l1 and l2: 
+            if l1.val < l2.val: 
+                dummy.next = l1 
+                l1 = l1.next 
+            else:
+                dummy.next = l2 
+                l2 = l2.next 
+            dummy = dummy.next 
+        
+        if l1: 
+            dummy.next = l1 
+        else:
+            dummy.next = l2 
+        
+        return head.next 
+        
