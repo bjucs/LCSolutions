@@ -1,0 +1,20 @@
+
+#LC121: Best Time to Buy and Sell Stock
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        # By default, max profit is 0
+        # Set lowest buying price to the 1st day 
+        maxProfit = 0
+        minPrice = prices[0] 
+        
+        # For each continuing day 
+        for x in prices[1:]:
+            # If the price that current day is less than the first, thats the min price
+            if x < minPrice:
+                minPrice = x 
+            # If the current max profit is less than the current price minus running min price, thats the new max profit 
+            elif maxProfit < x - minPrice:
+                maxProfit = x - minPrice
+        
+        return maxProfit 
